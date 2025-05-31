@@ -1,0 +1,748 @@
+2025-06-01 01:28:00,044 - INFO - PyTorch version 2.7.0 available.
+2025-06-01 01:28:13,130 - INFO - Sample train set 1500/5428
+2025-06-01 01:28:13,130 - INFO - ... including dev set 500 samples
+2025-06-01 01:28:13,130 - INFO - Loading model with FP16...
+2025-06-01 01:28:15,390 - INFO - Done with 2.26s
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+2025-06-01 01:28:16,031 - INFO - Tokenizing training samples...
+2025-06-01 01:28:17,872 - INFO - Done with 1.84s
+/root/LoHO/large_models/run.py:494: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `OurTrainer.__init__`. Use `processing_class` instead.
+  trainer = OurTrainer(
+2025-06-01 01:28:18,125 - INFO - ***** Running training *****
+2025-06-01 01:28:18,125 - INFO -   Num examples = 1000
+2025-06-01 01:28:18,125 - INFO -   Num Epochs = 159
+2025-06-01 01:28:18,125 - INFO -   Instantaneous batch size per device = 16
+2025-06-01 01:28:18,125 - INFO -   Total train batch size (w. parallel, distributed & accumulation) = 16
+2025-06-01 01:28:18,125 - INFO -   Gradient Accumulation steps = 1
+2025-06-01 01:28:18,125 - INFO -   Total optimization steps = 10000
+2025-06-01 01:28:18,127 - INFO -   Number of trainable parameters = 619339008
+OurArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+alternate_training=False,
+auto_find_batch_size=False,
+average_tokens_across_devices=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=False,
+eos_token=<EOS_TOKEN>,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=1000,
+eval_strategy=steps,
+eval_use_gather_object=False,
+fo_optimizer=sgd,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+head_tuning=False,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+hybrid_optimizer=True,
+icl_sfc=False,
+if_sgd_dropout=False,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+layer_wise_hybrid=True,
+learning_rate=0.0001,
+length_column_name=length,
+linear_probing=False,
+load_best_model_at_end=True,
+load_bfloat16=False,
+load_float16=True,
+load_int8=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=result/WIC-switch-base-8-mezo-ft-with-hybrid-opt-last-24layer-sgd-step-1-no-dropout-10000-16-1e-4-1e-7-1e-3-0/runs/Jun01_01-28-01_autodl-container-d2a7408c62-3ca0231e,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lora=False,
+lora_alpha=16,
+lora_r=8,
+lp_early_stopping=False,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+masking_prob=0.99,
+max_grad_norm=1.0,
+max_length=2048,
+max_new_tokens=50,
+max_steps=10000,
+metric_for_best_model=loss,
+model_name=google/switch-base-8,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_auto_device=False,
+no_cuda=False,
+no_eval=False,
+no_reparam=True,
+non_diff=False,
+num_beams=1,
+num_dev=500,
+num_eval=1000,
+num_prefix=5,
+num_train=1000,
+num_train_epochs=3.0,
+num_train_sets=None,
+only_predict=False,
+only_train_option=True,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=result/WIC-switch-base-8-mezo-ft-with-hybrid-opt-last-24layer-sgd-step-1-no-dropout-10000-16-1e-4-1e-7-1e-3-0,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+prefix_init_by_real_act=True,
+prefix_tuning=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+result_file=None,
+resume_from_checkpoint=None,
+run_name=result/WIC-switch-base-8-mezo-ft-with-hybrid-opt-last-24layer-sgd-step-1-no-dropout-10000-16-1e-4-1e-7-1e-3-0,
+sampling=False,
+save_model=False,
+save_on_each_node=False,
+save_on_interrupt=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=1,
+seed=42,
+sfc=False,
+sgd_optim_layers=['router', 'gate'],
+sgd_optim_step=1,
+skip_memory_metrics=True,
+tag=mezo-ft-with-hybrid-opt-last-24layer-sgd-step-1-no-dropout-10000-16-1e-4-1e-7-1e-3-0,
+task_name=WIC,
+temperature=1.0,
+tf32=None,
+top_k=None,
+top_p=0.95,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+train_as_classification=True,
+train_set_seed=0,
+trainer=zo,
+untie_emb=False,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_liger_kernel=False,
+use_mps_device=False,
+verbose=True,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+weight_wise_hybrid=False,
+zo_eps=0.001,
+zo_learning_rate=1e-07,
+)
+SwitchTransformersConfig {
+  "activation_dropout": 0,
+  "add_router_probs": false,
+  "architectures": [
+    "SwitchTransformersForConditionalGeneration"
+  ],
+  "attention_dropout": 0,
+  "batch_prioritized_routing": false,
+  "d_ff": 3072,
+  "d_kv": 64,
+  "d_model": 768,
+  "decoder_sparse_step": 2,
+  "decoder_start_token_id": 0,
+  "dense_act_fn": "relu",
+  "dropout": 0,
+  "dropout_rate": 0.1,
+  "encoder_sparse_step": 2,
+  "eos_token_id": 1,
+  "expert_capacity": 64,
+  "feed_forward_proj": "relu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "is_gated_act": false,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "switch_transformers",
+  "num_decoder_layers": 12,
+  "num_experts": 8,
+  "num_heads": 12,
+  "num_layers": 12,
+  "num_selected_experts": 1,
+  "num_sparse_decoder_layers": 6,
+  "num_sparse_encoder_layers": 6,
+  "pad_token_id": 0,
+  "relative_attention_max_distance": 128,
+  "relative_attention_num_buckets": 32,
+  "router_aux_loss_coef": 0.001,
+  "router_bias": false,
+  "router_dtype": "float32",
+  "router_ignore_padding_tokens": false,
+  "router_jitter_noise": 0,
+  "router_type": "tokens_masked",
+  "router_z_loss_coef": 0.001,
+  "task_specific_params": {
+    "summarization": {
+      "early_stopping": true,
+      "length_penalty": 2.0,
+      "max_length": 200,
+      "min_length": 30,
+      "no_repeat_ngram_size": 3,
+      "num_beams": 4,
+      "prefix": "summarize: "
+    },
+    "translation_en_to_de": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to German: "
+    },
+    "translation_en_to_fr": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to French: "
+    },
+    "translation_en_to_ro": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to Romanian: "
+    }
+  },
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.53.0.dev0",
+  "use_cache": true,
+  "vocab_size": 32128
+}
+
+  0%|          | 0/10000 [00:00<?, ?it/s]2025-06-01 01:28:18,131 - INFO - ZO parameters: shared.weight
+2025-06-01 01:28:18,131 - INFO - ZO parameters: encoder.block.0.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.0.SelfAttention.relative_attention_bias.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.0.layer_norm.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.1.mlp.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.1.mlp.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.0.layer.1.layer_norm.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.0.layer_norm.weight
+2025-06-01 01:28:18,132 - INFO - FO parameters: encoder.block.1.layer.1.mlp.router.classifier.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.1.layer.1.layer_norm.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.0.layer_norm.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.1.mlp.wi.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.1.mlp.wo.weight
+2025-06-01 01:28:18,132 - INFO - ZO parameters: encoder.block.2.layer.1.layer_norm.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.0.layer_norm.weight
+2025-06-01 01:28:18,133 - INFO - FO parameters: encoder.block.3.layer.1.mlp.router.classifier.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.3.layer.1.layer_norm.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.0.layer_norm.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.1.mlp.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.1.mlp.wo.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.4.layer.1.layer_norm.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.0.layer_norm.weight
+2025-06-01 01:28:18,133 - INFO - FO parameters: encoder.block.5.layer.1.mlp.router.classifier.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,133 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.5.layer.1.layer_norm.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.0.layer_norm.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.1.mlp.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.1.mlp.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.6.layer.1.layer_norm.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.0.layer_norm.weight
+2025-06-01 01:28:18,134 - INFO - FO parameters: encoder.block.7.layer.1.mlp.router.classifier.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,134 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.7.layer.1.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.7.layer.1.layer_norm.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.0.layer_norm.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.1.mlp.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.1.mlp.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.8.layer.1.layer_norm.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.0.layer_norm.weight
+2025-06-01 01:28:18,135 - INFO - FO parameters: encoder.block.9.layer.1.mlp.router.classifier.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.9.layer.1.layer_norm.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.10.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,135 - INFO - ZO parameters: encoder.block.10.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.10.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.10.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.10.layer.0.layer_norm.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.10.layer.1.mlp.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.10.layer.1.mlp.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.10.layer.1.layer_norm.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.0.layer_norm.weight
+2025-06-01 01:28:18,136 - INFO - FO parameters: encoder.block.11.layer.1.mlp.router.classifier.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.block.11.layer.1.layer_norm.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: encoder.final_layer_norm.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.0.SelfAttention.relative_attention_bias.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.0.layer_norm.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,136 - INFO - ZO parameters: decoder.block.0.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.0.layer.1.layer_norm.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.0.layer.2.mlp.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.0.layer.2.mlp.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.0.layer.2.layer_norm.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.0.layer_norm.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.1.layer_norm.weight
+2025-06-01 01:28:18,137 - INFO - FO parameters: decoder.block.1.layer.2.mlp.router.classifier.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.1.layer.2.layer_norm.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.0.layer_norm.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,137 - INFO - ZO parameters: decoder.block.2.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.2.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.2.layer.1.layer_norm.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.2.layer.2.mlp.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.2.layer.2.mlp.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.2.layer.2.layer_norm.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.0.layer_norm.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.1.layer_norm.weight
+2025-06-01 01:28:18,138 - INFO - FO parameters: decoder.block.3.layer.2.mlp.router.classifier.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.3.layer.2.layer_norm.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.0.layer_norm.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,138 - INFO - ZO parameters: decoder.block.4.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.4.layer.1.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.4.layer.2.mlp.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.4.layer.2.mlp.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.4.layer.2.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.0.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.1.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - FO parameters: decoder.block.5.layer.2.mlp.router.classifier.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.5.layer.2.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.0.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.1.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.2.mlp.wi.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.2.mlp.wo.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.6.layer.2.layer_norm.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.7.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,139 - INFO - ZO parameters: decoder.block.7.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.0.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.1.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - FO parameters: decoder.block.7.layer.2.mlp.router.classifier.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.7.layer.2.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.0.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.1.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.2.mlp.wi.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.2.mlp.wo.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.8.layer.2.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.0.layer_norm.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,140 - INFO - ZO parameters: decoder.block.9.layer.1.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - FO parameters: decoder.block.9.layer.2.mlp.router.classifier.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.9.layer.2.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.0.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.1.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.2.mlp.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.2.mlp.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.10.layer.2.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.0.SelfAttention.q.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.0.SelfAttention.k.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.0.SelfAttention.v.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.0.SelfAttention.o.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.0.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.1.EncDecAttention.q.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.1.EncDecAttention.k.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.1.EncDecAttention.v.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.1.EncDecAttention.o.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.1.layer_norm.weight
+2025-06-01 01:28:18,141 - INFO - FO parameters: decoder.block.11.layer.2.mlp.router.classifier.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_0.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_0.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_1.wi.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_1.wo.weight
+2025-06-01 01:28:18,141 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_2.wi.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_2.wo.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_3.wi.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_3.wo.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_4.wi.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_4.wo.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_5.wi.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_5.wo.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_6.wi.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_6.wo.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_7.wi.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.mlp.experts.expert_7.wo.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.block.11.layer.2.layer_norm.weight
+2025-06-01 01:28:18,142 - INFO - ZO parameters: decoder.final_layer_norm.weight
+Traceback (most recent call last):
+  File "/root/LoHO/large_models/run.py", line 623, in <module>
+    main()
+  File "/root/LoHO/large_models/run.py", line 581, in main
+    framework.train(train_samples, dev_samples if dev_samples is not None else eval_samples)
+  File "/root/LoHO/large_models/run.py", line 518, in train
+    trainer.train(resume_from_checkpoint=last_checkpoint) 
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/transformers/trainer.py", line 2240, in train
+    return inner_training_loop(
+  File "/root/LoHO/large_models/trainer.py", line 575, in _inner_training_loop
+    tr_loss_step, tr_loss_step1, tr_loss_step_sgd = self.hybrid_opt_step(model, inputs)
+  File "/root/LoHO/large_models/trainer.py", line 956, in hybrid_opt_step
+    loss1 = self.zo_forward(model, inputs)
+  File "/root/LoHO/large_models/trainer.py", line 835, in zo_forward
+    loss = self.compute_loss(model, inputs)
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/transformers/trainer.py", line 3810, in compute_loss
+    outputs = model(**inputs)
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/LoHO/large_models/utils.py", line 44, in forward_wrap_with_option_len
+    outputs = self.original_forward(input_ids=input_ids, **kwargs)
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/transformers/models/switch_transformers/modeling_switch_transformers.py", line 1662, in forward
+    decoder_outputs = self.decoder(
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/loho/lib/python3.9/site-packages/transformers/models/switch_transformers/modeling_switch_transformers.py", line 934, in forward
+    raise ValueError(f"You have to specify either {err_msg_prefix}input_ids or {err_msg_prefix}inputs_embeds")
+ValueError: You have to specify either decoder_input_ids or decoder_inputs_embeds
+  0%|          | 0/10000 [00:00<?, ?it/s]
